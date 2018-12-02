@@ -1,0 +1,14 @@
+body {
+    background: rgb(209,122,146);
+    background: linear-gradient(117deg, rgba(209,122,146,1) 0%, rgba(0,172,255,1) 100%);
+    font-family: Helvetica, Arial, sans-serif;
+    /* font-style: bold; */
+    text-align: center;
+    color: white;
+}
+
+h1 {
+    color: white;
+    font-family: Helvetica, Arial, sans-serif;
+    text-align: center;
+}
