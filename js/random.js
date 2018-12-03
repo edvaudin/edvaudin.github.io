@@ -3,7 +3,7 @@ setTimeout(function(){
     elem.style.marginTop = "40vh";
 }, 1000);
 var min = document.getElementsByClassName("min")[0];
-var max = documnet.getElementsByClassName("max")[0];
+var max = document.getElementsByClassName("max")[0];
 function getRndInteger(min, max) {
     return Math.floor(Math.random()*(max - min + 1) + min);
 }
