@@ -1,4 +1,19 @@
+html{
+    background-color: rgb(29,38,68);
+}
 body{
-    background-color: black;
-    
+    font-family: Helvetica, Arial, sans-serif;
+    font-style: bold;
+    text-align: center;
+    color: white;
+}
+
+h1 {
+    font-family: Helvetica, Arial, sans-serif;
+    font-style: bold;
+    text-align: center;
+}
+
+a{
+    color: white;
 }
