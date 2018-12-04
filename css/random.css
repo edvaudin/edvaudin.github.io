@@ -44,8 +44,8 @@ h1 {
     font-size: 60px;
     text-align: center;
     transition: all .7s;
-    font-family: sans-serif;
-    font-weight: 500;
+    font-family: 'Josefin Sans',sans-serif;
+    font-weight: 600;
 }
 
 .result {

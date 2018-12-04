@@ -21,7 +21,7 @@ html{
 body{
     font-family: 'Rubik', sans-serif;
     font-style: bold;
-    
+    font-size: 32px;
     text-align: center;
     color: white;
     background: linear-gradient(270deg, #81a193, #423f61, #857d87);
@@ -32,12 +32,26 @@ body{
 }
 
 h1 {
-    font-family: 'Rubik', sans-serif;
+    font-family: 'Josefin Sans', sans-serif;
     font-style: bold;
-    font-weight: 500;
+    font-size: 100px;
+    font-weight: 700;
     text-align: center;
+    transition: all 1s;
+}
+
+.anim{
+    filter: blur(50px);
+    transform: scale(.95);
 }
 
 a{
     color: white;
+    text-decoration: none;
+    margin-left: -150%;
+    transition: all .5s;
+}
+a:hover{
+    color: #eee;
+    
 }
