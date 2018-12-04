@@ -1,16 +1,38 @@
 
 html {
     height: 100%;
-    background: rgb(209,122,146);
-    background: linear-gradient(117deg, rgba(209,122,146,1) 0%, rgba(0,172,255,1) 100%);
 }
 
+@-webkit-keyframes Gradient {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@-moz-keyframes Gradient {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@keyframes Gradient { 
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+
+
 body {
-    font-family: Helvetica, Arial, sans-serif;
     font-style: bold;
     text-align: center;
+    font-family: 'Rubik', sans-serif;
     color: white;
+    background: linear-gradient(270deg, #18f0b8, #18a2f0, #db5640);
+    background-size: 600% 600%;
+    -webkit-animation: Gradient 60s ease infinite;
+	-moz-animation: Gradient 60s ease infinite;
+    animation: Gradient 60s ease infinite;
+    
 }
+
 
 .center-div
 {
@@ -23,22 +45,72 @@ h1 {
     font-family: Helvetica, Arial, sans-serif;
     text-align: center;
     transition: all .7s;
+    font-family: 'Rubik', sans-serif;
+    font-weight: 500;
 }
 
-.in{
-    width: 25vw;
-    /* float: left; */
+.result {
+    font-size: 100px;
+}
+
+.input-line{
     display:inline-block;
+    text-align: center;
 }
 
 p{
     margin: 0;
 }
 
-.in  p{
+.input-line  p{
+    float: left;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+.input-line form{
     float: left;
 }
 
-.in form{
-    float: right;
+input {
+    width: 75px;
+    background: none;
+    border: none;
+    border-bottom: 2px solid white;
+    overflow-y:hidden;
+    color: white;
+    height: 14px;
+
+}
+
+.input-line .centre-input{
+    display: inline-block;
+}
+
+input:focus{
+    outline:0;
+}
+
+button{
+    background: white;
+    border: none;
+    padding: 16px 32px;
+    border-radius: 32px;
+    margin-top: 16px;
+    font-family: 'Rubik', sans-serif;
+    font-size: 24px;
+    box-shadow: 0px 6px rgba(0,0,0,0.2);
+}
+
+button:hover{
+    margin-top: 18px;
+    cursor: pointer;
+    background-color: rgba(255,255,255,0.9);
+    box-shadow: 0px 4px rgba(0,0,0,0.2);
+}
+
+button:active{
+    margin-top: 22px;
+    background-color: rgba(255,255,255,0.7);
+    box-shadow: 0px 0px rgba(0,0,0,0.2);
 }

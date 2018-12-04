@@ -1,7 +1,7 @@
 setTimeout(function(){
     var elem = document.getElementById("animation");
-    elem.style.marginTop = "40vh";
-}, 1000);
+    elem.style.marginTop = "30vh";
+}, 500);
 
 function getRndInteger(min, max) {
     var min = parseInt(document.getElementById("min").value);
