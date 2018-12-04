@@ -25,7 +25,7 @@ body {
     text-align: center;
     font-family: 'Rubik', sans-serif;
     color: white;
-    background: linear-gradient(270deg, #81a193, #423f61, #6269a5);
+    background: linear-gradient(270deg, #81a193, #55517e, #6269a5);
     background-size: 600% 600%;
     -webkit-animation: Gradient 60s ease infinite;
 	-moz-animation: Gradient 60s ease infinite;
@@ -41,16 +41,16 @@ body {
 }
 
 h1 {
-
-    font-family: Helvetica, Arial, sans-serif;
+    font-size: 60px;
     text-align: center;
     transition: all .7s;
-    font-family: 'Rubik', sans-serif;
+    font-family: sans-serif;
     font-weight: 500;
 }
 
 .result {
     font-size: 100px;
+    font-family: 'Rubik', sans-serif;
 }
 
 .input-line{
@@ -85,12 +85,15 @@ input {
 
 .input-line .centre-input{
     display: inline-block;
+    margin-bottom: 16px;
 }
 
 input:focus{
     outline:0;
 }
-
+.buttonDiv {
+    height: 80px;
+}
 button{
     background: white;
     border: none;
