@@ -18,6 +18,8 @@ window.onload = function () {
 function buttonHandler() {
     gameRunning = 1;
     playerReset();
+    player.score = 0;
+    updateScore();
     update();
     document.getElementById("gameOver").style.display = "none";
 }
@@ -33,6 +35,7 @@ ctx.scale(20, 20);
 
 
 function arenaSweep() {
+    let rowCount = 1;
     outer: for (var y = arena.length - 1; y > 0; y--) {
         for (var x = 0; x < arena[y].length; x++) {
             if (arena[y][x] === 0) {
@@ -41,6 +44,10 @@ function arenaSweep() {
         }
         const row = arena.splice(y, 1)[0].fill(0);
         arena.unshift(row);
+        y++;
+
+        player.score += rowCount * 10;
+        rowCount *= 2;
     }
 }
 
@@ -158,6 +165,7 @@ function playerDrop() {
         merge(arena, player);
         playerReset();
         arenaSweep();
+        updateScore();
     }
     dropCounter = 0;
 }
@@ -227,6 +235,9 @@ let dropCounter = 0;
 let dropInterval = slider;
 let lastTime = 0;
 
+function updateScore() {
+    document.getElementById("score").innerText = player.score;
+}
 
 function update(time = 0) {
     if (gameRunning != 0) {
@@ -259,6 +270,7 @@ const arena = createMatrix(12, 20);
 const player = {
     pos: { x: 0, y: 0 },
     matrix: createPiece('T'),
+    score: 0,
 }
 
 // Listens to keypresses
