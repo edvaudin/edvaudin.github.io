@@ -1,6 +1,14 @@
 var slider = 700;
 var output;
+
+
+
 window.onload = function () {
+    var he = document.getElementById("anim");
+    he.classList.remove("anim");
+    var CANVAS = document.getElementsByClassName("canvas")[0];
+    CANVAS.style.border = '5px solid white'; 
+    CANVAS.style.backgroundColor = "black";
     let gameRunning = -1;
     slider = document.getElementById("difficulty").value;
     output = document.getElementById("output");
@@ -17,6 +25,7 @@ function buttonHandler() {
 // Get canvas and set context
 const canvas = document.getElementsByClassName("canvas")[0];
 const ctx = canvas.getContext("2d");
+
 
 // Apply context scale
 ctx.scale(20, 20);
@@ -269,6 +278,7 @@ document.addEventListener("keydown", event => {
 function modSpeed(){
     dropInterval = document.getElementById("difficulty").value;
     output.innerHTML = dropInterval;
+    document.getElementsByClassName("canvas")[0].focus();
 }
 
 

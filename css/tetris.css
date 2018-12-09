@@ -37,7 +37,12 @@ h1 {
     font-size: 60px;
     font-weight: 700;
     text-align: center;
-    transition: all 1s;
+    transition: all 0.5s;
+}
+
+.anim{
+    filter: blur(50px);
+    transform: scale(.95);
 }
 
 #output {
@@ -60,8 +65,10 @@ p {
 
 canvas {
     border: 5px solid white;
+    /* background-color: black; */
     width: 240px;
     height: 400px;
+    transition: all 1s
 }
 .slider {
 
