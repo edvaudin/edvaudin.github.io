@@ -74,14 +74,19 @@ canvas {
 
     -webkit-appearance: none;  /* Override default CSS styles */
     appearance: none;
-    width: 50%; /* Full-width */
+    width: 1%; /* Full-width */
     height: 2px; /* Specified height */
-    background: white; /* Grey background */
+    background: linear-gradient(0.25turn, red, #ebf8e1, green);
     border-radius: 100px;  
     outline: none; /* Remove outline */
     opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+    -ms-transform: rotateY(180deg);
+    -o-transform: rotateY(180deg);
+    transform: rotateY(180deg);
     -webkit-transition: .2s; /* 0.2 seconds transition on hover */
-    transition: opacity .2s;
+    transition: opacity .2s, width 1s;
 }
     
     /* Mouse-over effects */

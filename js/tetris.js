@@ -1,4 +1,4 @@
-var slider = 700;
+var slider = 800;
 var output;
 
 
@@ -10,6 +10,8 @@ window.onload = function () {
     CANVAS.style.border = '5px solid white'; 
     CANVAS.style.backgroundColor = "black";
     let gameRunning = -1;
+    sliderDisplay = document.getElementById("difficulty");
+    sliderDisplay.style.width = "50%";
     slider = document.getElementById("difficulty").value;
     output = document.getElementById("output");
 }
