@@ -40,6 +40,20 @@ h1 {
     transition: all 1s;
 }
 
+#output {
+    font-family: 'Josefin Sans', sans-serif;
+    font-style: bold;
+    font-size: 20px;
+    font-weight: 700;
+    text-align: center;
+}
+p {
+    font-family: 'Josefin Sans', sans-serif;
+    font-style: bold;
+    font-size: 20px;
+    font-weight: 700;
+    text-align: center;
+}
 #gameOver {
     display: none;
 }
@@ -49,6 +63,43 @@ canvas {
     width: 240px;
     height: 400px;
 }
+.slider {
+
+    -webkit-appearance: none;  /* Override default CSS styles */
+    appearance: none;
+    width: 50%; /* Full-width */
+    height: 2px; /* Specified height */
+    background: white; /* Grey background */
+    border-radius: 100px;  
+    outline: none; /* Remove outline */
+    opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+    -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+    transition: opacity .2s;
+}
+    
+    /* Mouse-over effects */
+    .slider:hover {
+    opacity: 1; /* Fully shown on mouse-over */
+    }
+    
+    /* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */ 
+    .slider::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Override default look */
+    appearance: none;
+    border-radius: 50%;
+    width: 25px; /* Set a specific slider handle width */
+    height: 25px; /* Slider handle height */
+    background: white; /* Green background */
+    cursor: pointer; /* Cursor on hover */
+    }
+    
+    .slider::-moz-range-thumb {
+    width: 25px; /* Set a specific slider handle width */
+    height: 25px; /* Slider handle height */
+    background: #4CAF50; /* Green background */
+    cursor: pointer; /* Cursor on hover */
+    }
+
 
 button{
     background: white;

@@ -1,9 +1,13 @@
-window.onload= function() {
+var slider = 700;
+var output;
+window.onload = function () {
     let gameRunning = -1;
+    slider = document.getElementById("difficulty").value;
+    output = document.getElementById("output");
 }
 
-function buttonHandler(){
-    console.log("teste");
+
+function buttonHandler() {
     gameRunning = 1;
     playerReset();
     update();
@@ -20,9 +24,9 @@ ctx.scale(20, 20);
 
 
 function arenaSweep() {
-    outer: for(var y=arena.length -1; y>0; y--){
-        for(var x=0; x<arena[y].length; x++){
-            if (arena[y][x] === 0){
+    outer: for (var y = arena.length - 1; y > 0; y--) {
+        for (var x = 0; x < arena[y].length; x++) {
+            if (arena[y][x] === 0) {
                 continue outer;
             }
         }
@@ -39,9 +43,9 @@ function collide(arena, player) {
             if (m[y][x] !== 0 &&
                 (arena[y + o.y] &&
                     arena[y + o.y][x + o.x]) !== 0) {
-                        
+
                 return true;
-                
+
             }
         }
     }
@@ -211,7 +215,7 @@ function rotate(matrix, dir) {
 }
 
 let dropCounter = 0;
-let dropInterval = 700;
+let dropInterval = slider;
 let lastTime = 0;
 
 
@@ -262,6 +266,10 @@ document.addEventListener("keydown", event => {
 });
 
 
+function modSpeed(){
+    dropInterval = document.getElementById("difficulty").value;
+    output.innerHTML = dropInterval;
+}
 
 
 
