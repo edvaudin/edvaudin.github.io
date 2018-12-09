@@ -24,25 +24,31 @@ body{
     font-size: 32px;
     text-align: center;
     color: white;
-    background: linear-gradient(270deg, #81a193, #423f61, #857d87);
+    /* background: linear-gradient(270deg, #81a193, #423f61, #857d87); */
+    background-color: black;
     background-size: 600% 600%;
     -webkit-animation: Gradient 60s ease infinite;
 	-moz-animation: Gradient 60s ease infinite;
     animation: Gradient 60s ease infinite;
+    transition: background 1s;
 }
 
 h1 {
     font-family: 'Josefin Sans', sans-serif;
     font-style: bold;
     font-size: 60px;
+    opacity: 1;
     font-weight: 700;
     text-align: center;
+    
     transition: all 0.5s;
+    transition-delay: 1s;
 }
 
 .anim{
     filter: blur(50px);
     transform: scale(.95);
+    opacity: 0;
 }
 
 #output {
@@ -58,6 +64,12 @@ p {
     font-size: 20px;
     font-weight: 700;
     text-align: center;
+
+}
+#fallTime {
+    opacity: 0;
+    transition: 1s;
+    transition-delay: 1s;
 }
 #gameOver {
     display: none;
@@ -65,10 +77,13 @@ p {
 
 canvas {
     border: 5px solid white;
-    /* background-color: black; */
+    opacity: 0;
+    background-color:black;
     width: 240px;
     height: 400px;
-    transition: all 1s
+    
+    transition: all 1s;
+    transition-delay: 1s;
 }
 .slider {
 
@@ -76,10 +91,10 @@ canvas {
     appearance: none;
     width: 1%; /* Full-width */
     height: 2px; /* Specified height */
-    background: linear-gradient(0.25turn, red, #ebf8e1, green);
+    background: linear-gradient(0.25turn, red, yellow, green);
     border-radius: 100px;  
     outline: none; /* Remove outline */
-    opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+    opacity: 0.5; /* Set transparency (for mouse-over effects on hover) */
     -webkit-transform: rotateY(180deg);
     -moz-transform: rotateY(180deg);
     -ms-transform: rotateY(180deg);
@@ -116,12 +131,16 @@ canvas {
 button{
     background: white;
     border: none;
-    padding: 16px 32px;
-    border-radius: 32px;
+    opacity: 0;
+    padding: 12px 24px;
+    /* border-radius: 32px; */
     margin-top: 16px;
     font-family: 'Rubik', sans-serif;
     font-size: 24px;
     box-shadow: 0px 6px rgba(0,0,0,0.2);
+    
+    transition: 1s;
+    transition-delay: 1s;
 }
 
 button:hover{

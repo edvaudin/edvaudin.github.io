@@ -6,9 +6,13 @@ var output;
 window.onload = function () {
     var he = document.getElementById("anim");
     he.classList.remove("anim");
+    var btn = document.getElementsByClassName("button")[0];
+    btn.style.opacity=1;
+    var para = document.getElementById("fallTime");
+    para.style.opacity=1;
     var CANVAS = document.getElementsByClassName("canvas")[0];
     CANVAS.style.border = '5px solid white'; 
-    CANVAS.style.backgroundColor = "black";
+    CANVAS.style.opacity = 1;
     let gameRunning = -1;
     sliderDisplay = document.getElementById("difficulty");
     sliderDisplay.style.width = "50%";
