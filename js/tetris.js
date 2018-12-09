@@ -1,39 +1,64 @@
+window.onload= function() {
+    let gameRunning = -1;
+}
+
+function buttonHandler(){
+    console.log("teste");
+    gameRunning = 1;
+    playerReset();
+    update();
+    document.getElementById("gameOver").style.display = "none";
+}
 
 // Get canvas and set context
 const canvas = document.getElementsByClassName("canvas")[0];
 const ctx = canvas.getContext("2d");
 
 // Apply context scale
-ctx.scale(20,20);
+ctx.scale(20, 20);
 
 
+
+function arenaSweep() {
+    outer: for(var y=arena.length -1; y>0; y--){
+        for(var x=0; x<arena[y].length; x++){
+            if (arena[y][x] === 0){
+                continue outer;
+            }
+        }
+        const row = arena.splice(y, 1)[0].fill(0);
+        arena.unshift(row);
+    }
+}
 
 function collide(arena, player) {
     const m = player.matrix;
     const o = player.pos;
-    for (let y = 0; y < m.length; y++){
+    for (let y = 0; y < m.length; y++) {
         for (let x = 0; x < m[y].length; x++) {
             if (m[y][x] !== 0 &&
                 (arena[y + o.y] &&
-                 arena[y + o.y][x + o.x]) !== 0){
-                return true; 
+                    arena[y + o.y][x + o.x]) !== 0) {
+                        
+                return true;
+                
             }
         }
     }
     return false;
-    
 }
 
 // Creates playable matrix surface in canvas
 function createMatrix(w, h) {
     const matrix = [];
-// Whilst height is not fasley (!= 0) push a new row of 0s into the matrix
+    // Whilst height is not fasley (!= 0) push a new row of 0s into the matrix
     while (h--) {
         matrix.push(new Array(w).fill(0));
     }
     return matrix;
 }
 
+// Tetrmino matrix profiles
 function createPiece(type) {
     if (type === 'T') {
         return [
@@ -43,63 +68,65 @@ function createPiece(type) {
         ];
     } else if (type === 'O') {
         return [
-            [1, 1],
-            [1, 1],
+            [2, 2],
+            [2, 2],
         ];
     } else if (type === 'L') {
         return [
-            [0, 1, 0],
-            [0, 1, 0],
-            [0, 1, 1],
+            [0, 3, 0],
+            [0, 3, 0],
+            [0, 3, 3],
         ];
     } else if (type === 'J') {
         return [
-            [0, 1, 0],
-            [0, 1, 0],
-            [1, 1, 0],
+            [0, 4, 0],
+            [0, 4, 0],
+            [4, 4, 0],
         ];
     } else if (type === 'I') {
         return [
-            [0, 1, 0, 0],
-            [0, 1, 0, 0],
-            [0, 1, 0, 0],
-            [0, 1, 0, 0],
+            [0, 5, 0, 0],
+            [0, 5, 0, 0],
+            [0, 5, 0, 0],
+            [0, 5, 0, 0],
         ];
     } else if (type === 'S') {
         return [
-            [0, 1, 1],
-            [1, 1, 0],
+            [0, 6, 6],
+            [6, 6, 0],
             [0, 0, 0],
         ];
     } else if (type === 'Z') {
         return [
-            [1, 1, 0],
-            [0, 1, 1],
+            [7, 7, 0],
+            [0, 7, 7],
             [0, 0, 0],
         ];
     }
 }
+
 // Draws tetromino 
 function drawMatrix(matrix, offset) {
     // Scans matrix rows and columns, if it spots 1s (tetromino in matrix) it fills a rectangle of that space
-        matrix.forEach((row, y) => {
-            row.forEach((value, x) => {
-                if (value !== 0){
-                    ctx.fillStyle = colors[value];
-                    ctx.fillRect(x + offset.x, y + offset.y, 1, 1);
-                }
-            });
+    matrix.forEach((row, y) => {
+        row.forEach((value, x) => {
+            if (value !== 0) {
+                ctx.fillStyle = colors[value];
+                ctx.fillRect(x + offset.x, y + offset.y, 1, 1);
+            }
         });
-    }
+    });
+}
 
+// Draws black canvas, then draws matrix (first instance the size of arena from origin)(second instance)
 function draw() {
     ctx.fillStyle = "#000";
-    ctx.fillRect(0,0,canvas.width,canvas.height);
-    drawMatrix(arena, {x: 0, y:0});
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    drawMatrix(arena, { x: 0, y: 0 });
     drawMatrix(player.matrix, player.pos);
 }
 
-
+// Draws the collided tetromino onto the arena
 function merge(arena, player) {
     player.matrix.forEach((row, y) => {
         row.forEach((value, x) => {
@@ -110,42 +137,52 @@ function merge(arena, player) {
     });
 }
 
-function playerDrop(){
+// Drops tetromino incrementally unless it will collide in which case tetromino is merged with arena then playerReset()
+function playerDrop() {
     player.pos.y++;
     if (collide(arena, player)) {
         player.pos.y--;
         merge(arena, player);
         playerReset();
+        arenaSweep();
     }
     dropCounter = 0;
 }
 
-function playerMove(dir){
+// Moves tetromino by x increment in given direction
+function playerMove(dir) {
     player.pos.x += dir;
     if (collide(arena, player)) {
         player.pos.x -= dir;
     }
 }
 
-function playerReset(){
+/* 
+Assigns new tetromino profile at random, puts it at the top-middle of the arena (y=0 x=arena[0].length / 2 | 0)
+If it is going to collide with another fresh tetromino, reset the top row of arena
+*/
+function playerReset() {
     const pieces = 'ILJOTSZ';
     player.matrix = createPiece(pieces[pieces.length * Math.random() | 0]);
     player.pos.y = 0;
     player.pos.x = (arena[0].length / 2 | 0) -
-                   (player.matrix[0].length / 2 | 0);
-    if (collide(arena, player)){
+        (player.matrix[0].length / 2 | 0);
+    if (collide(arena, player)) {
+        document.getElementById("gameOver").style.display = "block";
+        gameRunning = 0;
         arena.forEach(row => row.fill(0));
     }
 }
 
+// Allows player to call rotate and checks that the rotate will not go out of the arena
 function playerRotate(dir) {
     const pos = player.pos.x;
     let offset = 1;
     rotate(player.matrix, dir);
-    while (collide(arena, player)){
+    while (collide(arena, player)) {
         player.pos.x += offset;
         offset = -(offset + (offset > 0 ? 1 : -1));
-        if (offset > player.matrix[0].length){
+        if (offset > player.matrix[0].length) {
             rotate(player.matrix, -dir);
             player.pos.x = pos;
             return;
@@ -153,16 +190,17 @@ function playerRotate(dir) {
     }
 }
 
-function rotate(matrix, dir){
-    for (let y = 0; y < matrix.length; y++){
-        for (let x = 0; x < y; x++){
+// Transposes rotated matrix
+function rotate(matrix, dir) {
+    for (let y = 0; y < matrix.length; y++) {
+        for (let x = 0; x < y; x++) {
             [
                 matrix[x][y],
                 matrix[y][x],
             ] = [
-                matrix[y][x],
-                matrix[x][y],
-            ];
+                    matrix[y][x],
+                    matrix[x][y],
+                ];
         }
     }
     if (dir > 0) {
@@ -176,16 +214,20 @@ let dropCounter = 0;
 let dropInterval = 700;
 let lastTime = 0;
 
-function update(time = 0){
-    const deltaTime = time - lastTime;
-    lastTime = time;
-    dropCounter += deltaTime;
-    // If time passed goes over set interval: player.pos.y++ (as set in playerDrop())
-    if (dropCounter > dropInterval){
-        playerDrop();
+
+function update(time = 0) {
+    if (gameRunning != 0) {
+        const deltaTime = time - lastTime;
+        lastTime = time;
+        dropCounter += deltaTime;
+        // If time passed goes over set interval: player.pos.y++ (as set in playerDrop())
+        if (dropCounter > dropInterval) {
+            playerDrop();
+        }
+        draw();
+        requestAnimationFrame(update);
     }
-    draw();
-    requestAnimationFrame(update);
+
 }
 
 const colors = [
@@ -202,21 +244,24 @@ const colors = [
 const arena = createMatrix(12, 20);
 
 const player = {
-    pos: {x: 0, y: 0},
+    pos: { x: 0, y: 0 },
     matrix: createPiece('T'),
 }
 
 // Listens to keypresses
 document.addEventListener("keydown", event => {
-   if (event.keyCode === 37){
-       playerMove(-1);
-   } else if (event.keyCode === 39){
-       playerMove(1);
-   } else if (event.keyCode === 40) {
+    if (event.keyCode === 37) {
+        playerMove(-1);
+    } else if (event.keyCode === 39) {
+        playerMove(1);
+    } else if (event.keyCode === 40) {
         playerDrop();
-   } else if (event.keyCode === 38){
-       playerRotate(-1);
-   } 
+    } else if (event.keyCode === 38) {
+        playerRotate(-1);
+    }
 });
 
-update();
+
+
+
+
