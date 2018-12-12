@@ -24,11 +24,11 @@ body{
     font-size: 32px;
     text-align: center;
     color: white;
-    background: linear-gradient(270deg, #81a193, #423f61, #857d87);
-    background-size: 600% 600%;
-    -webkit-animation: Gradient 60s ease infinite;
-	-moz-animation: Gradient 60s ease infinite;
-    animation: Gradient 60s ease infinite;
+    background: linear-gradient(270deg, #596b63, #595f80, #323135);
+    background-size: 300% 300%;
+    -webkit-animation: Gradient 40s ease infinite;
+	-moz-animation: Gradient 40s ease infinite;
+    animation: Gradient 40s ease infinite;
 }
 
 h1 {
