@@ -1,5 +1,6 @@
 html{
     height: 100%;
+    width: 100%;
 }
 
 @-webkit-keyframes Gradient {
@@ -52,6 +53,6 @@ a{
     transition: all .5s;
 }
 a:hover{
-    color: #eee;
+    color: rgb(163, 148, 199);
     
 }
