@@ -1,7 +1,3 @@
-
-
-
-
 function body_onload(){
     var he = document.getElementById("anim");
     he.classList.remove("anim");
@@ -14,7 +10,6 @@ function body_onload(){
             },50);
         },100);
     },300);
-    
-    snowStorm.init();
+
 }
 
