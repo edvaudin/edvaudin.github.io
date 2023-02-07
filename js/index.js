@@ -1,6 +1,4 @@
 function body_onload(){
-    var he = document.getElementById("anim");
-    he.classList.remove("anim");
     setTimeout(function(){
         document.getElementById("link1").style.marginLeft = "0";
         setTimeout(function(){
