@@ -9,9 +9,7 @@ body{
     font-size: 32px;
     text-align: center;
     color: white;
-    background-image: url("../img/acryllic.jpg");
-    background-color: #074f57;
-    background-size: cover;
+    background-color: #2b94a0;
 }
 h1 {
     font-family: 'Josefin Sans', sans-serif;
@@ -33,3 +31,70 @@ a:hover{
     
 }
 
+div{
+    display: flex;
+}
+
+.container{
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+    width: 200vh;
+}
+
+.container div
+{
+    box-sizing: border-box;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    height: calc(80vh - 50px);
+    padding: 5px;
+    margin: 5px;
+    border: 10px solid white;
+}
+
+.container h1
+{
+    font-size: 300px;
+}
+
+.musicpanel::before
+{
+    -webkit-filter: blur(5px);
+    -moz-filter: blur(5px);
+    -o-filter: blur(5px);
+    -ms-filter: blur(5px);
+    filter: blur(5px);
+}
+
+.musicpanel:hover
+{
+    background-image: url("../img/sirens.png");
+    background-size: cover;
+    background-position: center;
+    background-color: #25DA9D;
+}
+
+.softwarepanel:hover
+{
+    background-image: url("../img/taskbot.png");
+    background-size: cover;
+    background-position: center;
+    background-color: #2562DA;
+}
+
+.gamespanel:hover
+{
+    background-image: url("../img/narcoscape.png");
+    background-size: cover;
+    background-position: center;
+    background-color: #25BCDA;
+}
+
+.img
+{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
