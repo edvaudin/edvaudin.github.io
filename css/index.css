@@ -27,12 +27,12 @@ h1 {
 }
 
 .container{
-    padding: 25px;
+    padding: 100px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    gap: 25px;
-    height: 80vh;
+    gap: 100px;
+    height: 75vh;
 }
 
 .container > div
@@ -41,8 +41,6 @@ h1 {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 5px;
-    margin: 5px;
     border: 10px solid ghostwhite;
     text-align: center;
     background-size: cover;
@@ -51,6 +49,7 @@ h1 {
 
 .container a
 {
+    font-family: 'Josefin Sans', sans-serif;
     font-size: 400px;
     text-decoration: none;
     color: rgba(0, 0, 0, 0);
