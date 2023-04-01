@@ -9,7 +9,8 @@ body {
     font-style: bold;
     font-size: 32px;
     color: white;
-    background-color: #2b94a0;
+    background-color: rgb(26, 24, 24);
+    /* background-color: #2b94a0; */
 }
 
 header {
@@ -42,15 +43,22 @@ h1 {
     align-items: center;
     padding: 5px;
     margin: 5px;
-    border: 10px solid white;
+    border: 10px solid ghostwhite;
     text-align: center;
     background-size: cover;
     background-position: center;
 }
 
-.container h1
+.container a
 {
-    font-size: 300px;
+    font-size: 400px;
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0);
+    -webkit-text-stroke: 10px white;
+}
+
+.container a:hover{
+    color: ghostwhite;
 }
 
 .musicpanel::before
