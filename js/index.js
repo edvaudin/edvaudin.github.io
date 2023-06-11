@@ -7,11 +7,14 @@ var musicImages = [
 var gamesImages = [
     "img/games-images/artificial.png",
     "img/games-images/narcoscape.png",
-    "img/games-images/sr.png"
+    "img/games-images/sr.png",
+    "img/games-images/dreamweaver-screenshot.png"
 ];
 var softwareImages = [
-    "img/software-images/focusanger.jpg",
-    "img/software-images/taskbot.png"
+    "img/software-images/shift-logger.jpg",
+    "img/software-images/taskbot.png",
+    "img/software-images/excel-reader.jpg",
+    "img/software-images/flashcards.jpg"
 ];
 var slideRate = 5000;
 
