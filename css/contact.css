@@ -1,0 +1,121 @@
+html
+{
+    height: 100%;
+    width: 100%;
+}
+
+body 
+{
+    box-sizing: border-box;
+    font-family: 'Rubik', sans-serif;
+    font-style: bold;
+    font-size: 24px;
+    color: white;
+    background-color: rgb(26, 24, 24);
+    /* background-color: #2b94a0; */
+}
+
+header 
+{
+    display: flex;
+    text-align: center;
+    height: 20%;
+    flex-direction:row;
+    align-items: center;
+    justify-content: center;
+    gap: 5%
+}
+
+a 
+{
+    color: rgb(232, 148, 38);
+    text-decoration: none;
+    transition: all 0.5s;
+}
+
+header > a
+{
+    color: ghostwhite;
+    font-size: 32px;
+}
+
+a:hover
+{
+    color: gray;
+}
+
+.contact-section
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.contact-section > p{
+    margin: 0;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.container section 
+{
+    padding: 100px;
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.social-media-links
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10%
+}
+
+.social-media-links > a > img
+{
+    padding: 10px;
+    border: dotted 3px transparent;
+    height: 50px;
+}
+
+.social-media-links > a > img:hover
+{
+    border: dotted 3px whitesmoke;
+}
+
+h1 
+{
+    font-family: 'Josefin Sans', sans-serif;
+    font-style: bold;
+    font-size: 75px;
+    font-weight: 700;
+}
+
+h2
+{
+    font-style: bold;
+    font-size: 50px;
+    font-weight: 700;
+    margin-block-start: 0.6em;
+    margin-block-end: 0.6em;
+}
+
+h3
+{
+    font-size: 35px;
+    font-weight: 500;
+}
+
+section
+{
+    padding: 10px;
+}

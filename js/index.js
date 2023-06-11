@@ -12,35 +12,48 @@ var softwareImages = [
     "img/software-images/focusanger.jpg",
     "img/software-images/taskbot.png"
 ];
-var slideRate = 2000;
+var slideRate = 5000;
 
 function cycleBackgroundImages(images, targetElement) {
     let index = 0;
   
     function updateBackgroundImage() {
-      index = (index + 1) % images.length;
-      const imageUrl = images[index];
-      targetElement.style.backgroundImage = `url(${imageUrl})`;
+        fadeOutBackground(targetElement, 1000);
+        index = (index + 1) % images.length;
+        const imageUrl = images[index];
+        targetElement.style.backgroundImage = `url(${imageUrl})`;
+       fadeInBackground(targetElement, 1000);
     }
   
     updateBackgroundImage();
   
-    setInterval(updateBackgroundImage, (Math.random() + 1) * slideRate);
+    setInterval(updateBackgroundImage, (Math.random() + 2) * slideRate);
 }
 
-function fadeToNextImage(target){
-    return new Promise(function (resolve, reject) {
-        var delta = 0.01;
-        var id = setInterval(changeOpacity, 10);
-        function changeOpacity(){
-            target.style.opacity -= delta;
-            if (target.style.opacity <= 0){
-                clearInterval(id);
-                resolve();
-            }
-        }
-    })
-}
+// These do work but I need to put the background image underneath somehow.
+function fadeOutBackground(targetElement, duration) {
+    var opacity = 1;
+    var intervalDuration = duration / 100;
+    var interval = setInterval(function() {
+      opacity -= 0.01;
+      targetElement.style.backgroundColor = `rgba(0, 0, 0, ${opacity})`;
+      if (opacity <= 0) {
+        clearInterval(interval);
+      }
+    }, intervalDuration);
+  }
+  
+  function fadeInBackground(targetElement, duration) {
+    var opacity = 1;
+    var intervalDuration = duration / 100;
+    var interval = setInterval(function() {
+      opacity += 0.01;
+      targetElement.style.backgroundColor = `rgba(0, 0, 0, ${opacity})`;
+      if (opacity >= 1) {
+        clearInterval(interval);
+      }
+    }, intervalDuration);
+  }
 
 document.addEventListener("DOMContentLoaded", function() {
     const musicPanel = document.querySelector(".music-panel");
