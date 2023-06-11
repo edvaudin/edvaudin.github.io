@@ -23,6 +23,8 @@ header
     flex-direction:row;
     align-items: center;
     justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
     gap: 5%
 }
 
@@ -35,7 +37,6 @@ a
 
 header > a
 {
-    color: ghostwhite;
     font-size: 32px;
 }
 
@@ -43,13 +44,18 @@ a:hover
 {
     color: gray;
 }
-
+a > h1:hover
+{
+    color: gray;
+    transition: 0.5s;
+}
 .contact-section
 {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    padding-bottom: 50px;
 }
 
 .contact-section > p{
@@ -57,6 +63,7 @@ a:hover
 }
 
 .container {
+    border-top: 5px dotted whitesmoke;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
@@ -64,7 +71,7 @@ a:hover
 
 .container section 
 {
-    padding: 100px;
+    padding: 50px;
     display: flex;
     flex: 1;
     justify-content: center;
@@ -94,6 +101,7 @@ a:hover
 
 h1 
 {
+    color: whitesmoke;
     font-family: 'Josefin Sans', sans-serif;
     font-style: bold;
     font-size: 75px;

@@ -1,6 +1,7 @@
 var musicImages = [
-    "img/music-images/singed-reflection.png",
+    "img/music-images/forest-temple.png",
     "img/music-images/sirens.png",
+    "img/music-images/twbca.png",
     "img/music-images/nbi.jpg"
 ];
 var gamesImages = [

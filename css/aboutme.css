@@ -23,6 +23,8 @@ header
     flex-direction:row;
     align-items: center;
     justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
     gap: 5%
 }
 
@@ -35,7 +37,6 @@ a
 
 header > a
 {
-    color: ghostwhite;
     font-size: 32px;
 }
 
@@ -44,8 +45,15 @@ a:hover
     color: gray;
 }
 
+a > h1:hover
+{
+    color: gray;
+    transition: 0.5s;
+}
+
 h1 
 {
+    color: whitesmoke;
     font-family: 'Josefin Sans', sans-serif;
     font-style: bold;
     font-size: 75px;
@@ -72,31 +80,38 @@ section
     padding: 10px;
 }
 
+section:hover
+{
+    background-color: rgb(51, 74, 109);
+    transition: 0.25s;
+    border-left: 20px solid rgb(76, 120, 186);
+}
+
 .about-me
 {
-    border-left: 10px solid whitesmoke;
-    background: linear-gradient(90deg,  rgb(100, 150, 200) 0%, rgb(50, 70, 100) 100%);
-}
-.town-planning
-{
-    border-left: 10px solid lightgrey;
-    background: linear-gradient(90deg,  rgb(0, 100, 200) 0%, rgb(50, 70, 100) 100%);
+    border-left: 5px solid whitesmoke;
+    /* background: linear-gradient(90deg,  rgb(26,24,24) 0%, rgb(50, 70, 100) 100%); */
 }
 
 .programmer
 {
-    border-left: 10px solid whitesmoke;
-    background: linear-gradient(90deg,  rgb(100, 150, 200) 0%, rgb(50, 70, 100) 100%);
+    border-left: 5px solid gray;
+    /* background: linear-gradient(90deg,  rgb(26,24,24) 0%, rgb(50, 70, 100) 100%); */
 }
 
 .game-maker
 {
-    border-left: 10px solid lightgrey;
-    background: linear-gradient(90deg,  rgb(0, 100, 200) 0%, rgb(50, 70, 100) 100%);
+    border-left: 5px solid whitesmoke;
+    /* background: linear-gradient(90deg,  rgb(26,24,24) 0%, rgb(50, 70, 150) 100%); */
 }
 
 .musician
 {
-    border-left: 10px solid whitesmoke;
-    background: linear-gradient(90deg,  rgb(100, 150, 200) 0%, rgb(50, 70, 100) 100%);
+    border-left: 5px solid gray;
+    /* background: linear-gradient(90deg,  rgb(26,24,24) 0%, rgb(50, 70, 100) 100%); */
+}
+.town-planning
+{
+    border-left: 5px solid whitesmoke;
+    /* background: linear-gradient(90deg,  rgb(26,24,24) 0%, rgb(50, 70, 150) 100%); */
 }

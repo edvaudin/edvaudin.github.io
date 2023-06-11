@@ -21,13 +21,16 @@ header
     flex-direction:row;
     align-items: center;
     justify-content: center;
-    gap: 5%;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 5%
 }
 
 a 
 {
-    color: ghostwhite;
+    color: rgb(232, 148, 38);
     text-decoration: none;
+    transition: 0.5s;
 }
 
 header > a
@@ -75,6 +78,7 @@ h1 {
     font-size: 400px;
     color: rgba(0, 0, 0, 0);
     -webkit-text-stroke: 10px white;
+
 }
 
 .container a:hover{

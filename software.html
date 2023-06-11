@@ -4,15 +4,80 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <link href="https://fonts.googleapis.com/css?family=Rubik:300,400,500" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/portfolio.css">
     <title>Ed Vaudin's Software</title>
 </head>
-<header>
-    <a href="./aboutme.html">About me</a>
-    <h1>Ed Vaudin</h1>
-    <a href="./contact.html">Contact</a>
-</header>
+
 <body>
-    <h1>Software</h1>
+    <header>
+        <a href="./aboutme.html">About me</a>
+        <a href="./index.html"><h1>Ed Vaudin</h1></a>
+         <a href="./contact.html">Contact</a>
+    </header>
+    <h1 class="category-header">Software</h1>
+    <div class="container">
+        <section class="project-section">
+            <a>
+                <img src="img/software-images/taskbot.png">
+            </a>
+            <div class="project-text">
+                <a><h3>The GoodPlace Discord Bot</h3></a>
+                <p>For a year now, I have been developing a multi-faceted Discord bot using .NET. 
+                    This bot serves the GoodPlace OSRS clan on Discord in many ways. It manages user roles and badges 
+                    with a connection to the OSRS API. It assigns in-game tasks for players to complete, tracks their progress through 
+                    the OSRS API and awards points to spend on features in the server. It also provides clan leaderboards and a voting system 
+                    for events that run regularly in the clan. Unfortunately, I am not able to provide a direct link to the code on this as it
+                     is a proprietary setup, however I may be able to provide a showcase for anyone with express interest.
+                </p>
+            </div>
+        </section>
+        <section class="project-section">
+            <a href="https://github.com/edvaudin/CodeReviews.Console.ExcelReader">
+                <img src="img/software-images/excel-reader.jpg">
+            </a>
+            
+            <div class="project-text">
+                <a href="https://github.com/edvaudin/CodeReviews.Console.ExcelReader"><h3>Excel Reader</h3></a>
+                <p>This console application allows you to transpose data from an Excel table into a SQL database. 
+                </p>
+            </div>
+        </section>
+        <section class="project-section">
+            <a href="https://github.com/edvaudin/CodeReviews.Console.ShiftsLogger">
+                <img src="img/software-images/shift-logger.jpg">
+            </a>
+            
+            <div class="project-text">
+                <a href="https://github.com/edvaudin/CodeReviews.Console.ShiftsLogger"><h3>Shift Tracker</h3></a>
+                <p>This app allows you to log employee shifts through a self-hosted API. 
+                    This project really pushed me to learn how to host APIs and use RESTful practices.
+                </p>
+            </div>
+        </section>
+        <section class="project-section">
+            <a href="https://github.com/edvaudin/CodeReviews.Console.ExerciseTracker">
+                <img src="img/software-images/exercise-tracker.jpg">
+            </a>
+            <div class="project-text">
+                <a href="https://github.com/edvaudin/CodeReviews.Console.ExerciseTracker"><h3>Exercise Tracker</h3></a>
+                <p>This is a simple console app for tracking exercises. This project implements the repository pattern 
+                    and solidified my foundational knowledge on dependancy injection.
+                </p>
+            </div>
+        </section>
+        <section class="project-section">
+            <a href="https://github.com/edvaudin/CodeReviews.Console.Flashcards">
+                <img src="img/software-images/flashcards.jpg">
+            </a>
+            <div class="project-text">
+                <a href="https://github.com/edvaudin/CodeReviews.Console.Flashcards"><h3>Flashcards</h3></a>
+                <p>This console app is a fully-functional flashcard app that allows you to set questions and answers for revision. 
+                    It allows you to store different subjects with their own flashcards and keep track of your study sessions.
+                </p>
+            </div>
+        </section>
+    </div>
 </body>
 </html>
