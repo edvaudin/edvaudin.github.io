@@ -48,7 +48,7 @@ a:hover
 a > h1:hover
 {
     color: gray;
-    transition: 0.5s;
+    transition: 0.25s;
 }
 
 h1 
