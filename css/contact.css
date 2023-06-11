@@ -100,6 +100,7 @@ a > h1:hover
     padding: 10px;
     border: dotted 3px transparent;
     height: 50px;
+    transition: 0.25s;
 }
 
 .social-media-links > a > img:hover
