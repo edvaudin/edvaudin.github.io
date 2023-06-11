@@ -78,12 +78,13 @@ h3
 section
 {
     padding: 10px;
+    transition: 0.25s;
 }
 
 section:hover
 {
     background-color: rgb(51, 74, 109);
-    transition: 0.25s;
+    
     border-left: 20px solid rgb(76, 120, 186);
 }
 

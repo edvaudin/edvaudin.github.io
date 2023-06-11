@@ -1,9 +1,11 @@
-html{
+html
+{
     height: 100%;
     width: 100%;
 }
 
-body {
+body 
+{
     box-sizing: border-box;
     font-family: 'Rubik', sans-serif;
     font-style: bold;
@@ -30,7 +32,7 @@ a
 {
     color: rgb(232, 148, 38);
     text-decoration: none;
-    transition: 0.5s;
+    transition: 0.25s;
 }
 
 header > a
@@ -43,15 +45,17 @@ header > a:hover
     color: gray;
 }
 
-h1 {
+h1 
+{
     font-family: 'Josefin Sans', sans-serif;
     font-style: bold;
     font-size: 200px;
     font-weight: 700;
-    transition: all 1s;
+    transition: all 0.5s;
 }
 
-.container{
+.container
+{
     padding: 100px;
     display: flex;
     flex-direction: row;
@@ -81,7 +85,8 @@ h1 {
 
 }
 
-.container a:hover{
+.container a:hover
+{
     color: ghostwhite;
 }
 

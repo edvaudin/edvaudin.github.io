@@ -32,7 +32,7 @@ a
 {
     color: rgb(232, 148, 38);
     text-decoration: none;
-    transition: all 0.5s;
+    transition: all 0.25s;
 }
 
 header > a
@@ -44,10 +44,16 @@ a:hover
 {
     color: gray;
 }
+
+a > h1
+{
+    transition: 0.25s;
+}
+
 a > h1:hover
 {
     color: gray;
-    transition: 0.5s;
+    
 }
 .contact-section
 {
@@ -58,11 +64,13 @@ a > h1:hover
     padding-bottom: 50px;
 }
 
-.contact-section > p{
+.contact-section > p
+{
     margin: 0;
 }
 
-.container {
+.container 
+{
     border-top: 5px dotted whitesmoke;
     display: flex;
     flex-wrap: wrap;

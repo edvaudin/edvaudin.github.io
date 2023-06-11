@@ -43,12 +43,12 @@ a:hover
 a > img
 {
     border: dotted 10px transparent;
+    transition: all 0.25s;
 }
 
 a > img:hover
 {
     border: dotted 10px whitesmoke;
-    transition: all 0.25s;
 }
 
 header > a
@@ -61,10 +61,15 @@ header > a:hover
     color: gray;
 }
 
+a > h1
+{
+    transition: 0.25s;
+}
+
 a > h1:hover
 {
     color: gray;
-    transition: 0.25s;
+    
 }
 
 .container 
