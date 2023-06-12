@@ -2,6 +2,7 @@ html
 {
     height: 100%;
     width: 100%;
+    margin: 0;
 }
 
 body 
@@ -9,7 +10,7 @@ body
     box-sizing: border-box;
     font-family: 'Rubik', sans-serif;
     font-style: bold;
-    font-size: 24px;
+    font-size: 1.5rem;
     color: white;
     background-color: rgb(26, 24, 24);
     /* background-color: #2b94a0; */
@@ -37,7 +38,7 @@ a
 
 header > a
 {
-    font-size: 32px;
+    font-size: 2rem;
 }
 
 a:hover
@@ -53,15 +54,15 @@ a > h1
 a > h1:hover
 {
     color: gray;
-    
 }
+
 .contact-section
 {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    padding-bottom: 50px;
+    padding-bottom: 4rem;
 }
 
 .contact-section > p
@@ -79,7 +80,7 @@ a > h1:hover
 
 .container section 
 {
-    padding: 50px;
+    padding: 1rem;
     display: flex;
     flex: 1;
     justify-content: center;
@@ -92,14 +93,15 @@ a > h1:hover
     display: flex;
     flex-direction: row;
     justify-content: center;
-    gap: 10%
+    gap: 10%;
+    max-width: 50%;
 }
 
 .social-media-links > a > img
 {
-    padding: 10px;
+    padding: 1rem;
     border: dotted 3px transparent;
-    height: 50px;
+    height: 3rem;
     transition: 0.25s;
 }
 
@@ -113,14 +115,14 @@ h1
     color: whitesmoke;
     font-family: 'Josefin Sans', sans-serif;
     font-style: bold;
-    font-size: 75px;
+    font-size: 4rem;
     font-weight: 700;
 }
 
 h2
 {
     font-style: bold;
-    font-size: 50px;
+    font-size: 3rem;
     font-weight: 700;
     margin-block-start: 0.6em;
     margin-block-end: 0.6em;
@@ -128,11 +130,42 @@ h2
 
 h3
 {
-    font-size: 35px;
+    font-size: 2rem;
     font-weight: 500;
 }
 
-section
+@media screen and (width < 750px) 
 {
-    padding: 10px;
+    body
+    {
+        font-size: 1rem;
+    }
+
+    header
+    {
+        margin-bottom: 1rem;
+        flex-direction: column;
+    }
+
+    header > a
+    {
+        font-size: 1rem;
+    }
+
+    h1
+    {
+        font-size: 4rem;
+        margin-top: 1rem;
+        margin-bottom: 0.5rem;
+    }
+
+    h2
+    {
+        font-size: 2rem;
+    }
+
+    .container
+    {
+        flex-direction: column;
+    }
 }
