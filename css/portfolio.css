@@ -99,8 +99,8 @@ a > h1:hover
 
 .project-section > a > img
 {
-    width: 500px;
-    max-height: 500px;
+    width: 25vw;
+    max-height: 25vw;
     object-fit:cover;
 }
 

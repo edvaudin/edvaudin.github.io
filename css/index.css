@@ -2,6 +2,7 @@ html
 {
     height: 100%;
     width: 100%;
+    margin: 0;
 }
 
 body 
@@ -9,7 +10,7 @@ body
     box-sizing: border-box;
     font-family: 'Rubik', sans-serif;
     font-style: bold;
-    font-size: 32px;
+    font-size: 2rem;
     color: white;
     background-color: rgb(26, 24, 24);
     /* background-color: #2b94a0; */
@@ -37,7 +38,7 @@ a
 
 header > a
 {
-    font-size: 32px;
+    font-size: 2rem;
 }
 
 header > a:hover
@@ -49,19 +50,19 @@ h1
 {
     font-family: 'Josefin Sans', sans-serif;
     font-style: bold;
-    font-size: 75px;
+    font-size: 5rem;
     font-weight: 700;
     transition: all 0.25s;
 }
 
 .container
 {
-    padding-left: 50px;
-    padding-right: 50px;
+    padding-left: 3rem;
+    padding-right: 3rem;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    gap: 50px;
+    gap: 3rem;
     height: 75vh;
 }
 
@@ -71,7 +72,6 @@ h1
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 5px solid ghostwhite;
     text-align: center;
     background-size: cover;
     background-position: center;
@@ -80,11 +80,12 @@ h1
 .container a
 {
     font-family: 'Josefin Sans', sans-serif;
-    font-size: 125px;
+    font-size: 7rem;
     color: rgba(0, 0, 0, 0);
     -webkit-text-stroke: 3px white;
-
 }
+
+
 
 .container a:hover
 {
@@ -93,7 +94,31 @@ h1
 
 .img
 {
-    height: 100%;
-    width: 100%;
     object-fit: cover;
+}
+
+@media screen and (width < 750px) {
+    .container a
+    {
+        font-size: 3rem;
+    }  
+    header
+    {
+        margin-bottom: 1rem;
+        flex-direction: column;
+    }
+    header > a
+    {
+        font-size: 1rem;
+    }
+    h1
+    {
+        font-size: 4rem;
+        margin-top: 1rem;
+        margin-bottom: 0.5rem;
+    }
+    .container
+    {
+        flex-direction: column;
+    }
 }
